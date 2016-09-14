@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 1, 2014 12:39:45 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bookstore.data.User" table="shiro_users1" catalog="bookstore">
+        <id name="id" type="java.lang.Integer">
+            <column name="user_id" />
+            <generator class="identity"></generator>
+        </id>
+        <property name="username" type="string">
+            <column name="username" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" />
+        </property>
+        <property name="salt" type="string">
+            <column name="salt" />
+        </property>
+    </class>
+</hibernate-mapping>

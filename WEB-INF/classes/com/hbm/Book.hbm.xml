@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 27 Feb, 2014 9:01:19 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.bookstore.data.Book" table="books" catalog="bookstore">
+		<id name="id" type="java.lang.Integer">
+			<column name="book_id" />
+			<generator class="identity" />
+		</id>
+		<property name="author" type="string">
+			<column name="author" />
+		</property>
+		<property name="title" type="string">
+			<column name="title" />
+		</property>
+		<property name="price" type="float">
+			<column name="price" sql-type="NUMERIC(12,2)" />
+		</property>
+
+	</class>
+	<query name="getBooksOnTitleAndAuthor">
+<![CDATA[
+	
+	from com.bookstore.data.Book book where book.title like :title and book.author like :author
+]]>
+	</query>
+
+</hibernate-mapping>
